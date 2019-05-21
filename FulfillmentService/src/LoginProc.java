@@ -68,6 +68,27 @@ public class LoginProc extends HttpServlet {
 				break;
 			}
 			
+			/* 쿠키
+			String save = request.getParameter("save");	//체크박스가 있다면
+			id = request.getParameter("id");
+			
+			if(save != null) {	//아이디 저장을 눌렀다면
+				Cookie cookie = new Cookie("id", id);
+				cookie.setMaxAge(60*60);	// 60분간 유효
+				response.addCookie(cookie);		//사용자에게 쿠키값을 넘겨줌
+			}
+			
+			Cookie[] cookies = request.getCookies();
+			id = "";
+			
+			if(cookies != null) {	
+				for(Cookie cookie: cookies) {
+					id = cookie.getValue();
+					break;
+				}
+			}
+			 */
+			
 			if(id.equals("admin") && !password.equals("admin")) {
 				request.setAttribute("message", "패스워드 오류입니다. 다시 입력해 주세요.");
 				request.setAttribute("url", "view/login.jsp");
