@@ -387,7 +387,7 @@ public class ProductDAO {
 		LOG.trace("ProductDAO SendOrderRequest() success");
 	}
 	
-	
+	/* 물품의 개수가 10이하일 때 */
 	public int selectProductCount() {
 		LOG.trace("ProductDAO selectProductCount() start");
 		String sql = "select count(p_id) from product where p_amount <= 10;";
